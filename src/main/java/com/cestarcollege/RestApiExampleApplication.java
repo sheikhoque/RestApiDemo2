@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class RestApiExampleApplication {
-
+        /* A FAKE OBJECT*/
         private final Faker faker = new Faker();
 	public static void main(String[] args) {
 		SpringApplication.run(RestApiExampleApplication.class, args);
