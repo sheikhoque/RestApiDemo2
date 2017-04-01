@@ -6,7 +6,6 @@
 package com.cestarcollege.controller;
 import com.cestarcollege.model.Pie;
 import com.cestarcollege.model.PieRepository;
-import com.sun.corba.se.impl.ior.ObjectReferenceFactoryImpl;
 import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -30,11 +29,13 @@ public class PieRestController {
     
     @RequestMapping(method=RequestMethod.GET)
     public ResponseEntity<Collection<Pie>> getAllPies(){
-        return new ResponseEntity<>((Collection<Pie>)repo.findAll(), HttpStatus.OK);
+        return new ResponseEntity<>((Collection<Pie>)
+                repo.findAll(), HttpStatus.OK);
     }
     @RequestMapping(method=RequestMethod.GET, value="/{id}")
     public ResponseEntity<Pie> getPieWithId(@PathVariable Long id){
-        return new ResponseEntity<>(repo.findOne(id), HttpStatus.OK);
+        return new ResponseEntity<>(repo.findOne(id),
+                HttpStatus.OK);
     }
     
     @RequestMapping(method=RequestMethod.GET, params={"name"})
